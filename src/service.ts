@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 const server = createServer(app);
-const HTTP_PORT = Number(process.env.HTTP_PORT || 8080);
+const PORT = Number(process.env.PORT || 8080);
 
 
 
@@ -38,8 +38,8 @@ const start = async () => {
       await AppDataSource.initialize();
     }
     initSocket(server, AppDataSource);
-    server.listen(HTTP_PORT, () => {
-      logger.info(`Server running on port ${HTTP_PORT}`);
+    server.listen(PORT, () => {
+      logger.info(`Server running on port ${PORT}`);
     });
   } catch (err) {
     logger.error(`DB init failed: ${err}`);
