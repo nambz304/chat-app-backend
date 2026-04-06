@@ -113,7 +113,7 @@ export const authGoogleCallback = async (
     const token = jwt.sign(
       { sub: user.id, email: user.email },
       JWT_SECRET,
-      { expiresIn: "7d" }
+      { expiresIn: "15M" }
     );
 
     const feBase = FRONTEND_URL || "http://localhost:5173";
